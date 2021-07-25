@@ -5,7 +5,8 @@ Using Multi-threading to downloading picture(decrease I/O time).
 
 # Next update
 - [x] program flow
-- [ ] Thread information for cpython
+- [x] MultiThread vs MultiProcessing
+- [ ] Program explain above two things
 
 
 ## Program flow chart
@@ -27,9 +28,15 @@ cond1(no)->cond1
 
 ![image](https://user-images.githubusercontent.com/34651757/125172253-33598100-e1eb-11eb-9e70-caa511e811c8.png)
 
-## Thread Information
+## MultiThread vs MultiProcessing
 
-updating...
+MultiThreading in Python : <br></br>
+Concurrently execute lots of things in a period of time.<br></br>
+MultiProcessing in Python : <br></br>
+Parrelly execute lots of things in a period of time.<br></br>
+
+But in a moment MultiThreading only execute **one task** <br></br>
+MultiPrcoess execute **Multiple tasks**<br></br>
 
 
 ## Other Information
