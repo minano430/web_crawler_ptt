@@ -30,15 +30,22 @@ cond1(no)->cond1
 
 ## MultiThread vs MultiProcessing
 
-MultiThreading in Python : <br></br>
-Concurrently execute lots of things in a period of time.<br></br>
-MultiProcessing in Python : <br></br>
-Parrelly execute lots of things in a period of time.<br></br>
+|Task        |MultiThreading|MultiProcessing|Original    |
+|----------- |-----------|-----------|-----------|
+|IO Bounding |  **Fast**         |   **Fast**        |     slow      |
+|CPU Bounding|  slow     |**Fast**   |   slow        |
 
-But in a moment MultiThreading only execute **one task** <br></br>
-MultiPrcoess execute **Multiple tasks**<br></br>
+Testing for IO Bounding task : 
 
-You can try the process_thread_test.py to now the differ between two of them.
+
+Testing for CPU Bounding task : 
+<p align="left"><img width="40%" src="result/test_result.png"/></p>
+Explanations: <br></br>
+We have four task, each task is to looping numeric addition.<br></br>
+In our pool we have four workers for process and thread and in the result you can see that the cost time of thread is merely four times of process.
+<img width="914" alt="image" src="https://user-images.githubusercontent.com/34651757/126960009-ab66442f-30ab-4ac2-94c4-67d681ca3691.png">
+There is a restriction of threading in python due to the GIL(global interpreter Lock),when cpu is processing the program multithread will switch to another thread frequently.<br></br>
+But when it comes to multiprocessing there were no GIL restriction so the four workers works parallelly.<br></br>
 
 ## Other Information
 
