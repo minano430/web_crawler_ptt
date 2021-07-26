@@ -28,11 +28,11 @@ cond1(no)->cond1
 
 ![image](https://user-images.githubusercontent.com/34651757/125172253-33598100-e1eb-11eb-9e70-caa511e811c8.png)
 
-## MultiThread vs MultiProcessing
+## MultiThread vs MultiProcessing (from https://medium.com/contentsquare-engineering-blog/multithreading-vs-multiprocessing-in-python-ece023ad55a)
 
 |Task        |MultiThreading|MultiProcessing|Original    |
 |----------- |-----------|-----------|-----------|
-|IO Bounding |  **Fast**         |   **Fast**        |     slow      |
+|IO Bounding |  **Fast**         |   **Fast**(slower than thread)        |     slow      |
 |CPU Bounding|  slow     |**Fast**   |   slow        |
 
 Testing for IO Bounding task : 
@@ -40,9 +40,11 @@ Testing for IO Bounding task :
 
 Testing for CPU Bounding task : 
 <p align="left"><img width="40%" src="result/test_result.png"/></p>
-Explanations: <br></br>
+Explanations : 
+
 We have four task, each task is to looping numeric addition.<br></br>
 In our pool we have four workers for process and thread and in the result you can see that the cost time of thread is merely four times of process.
+
 <img width="914" alt="image" src="https://user-images.githubusercontent.com/34651757/126960009-ab66442f-30ab-4ac2-94c4-67d681ca3691.png">
 There is a restriction of threading in python due to the GIL(global interpreter Lock),when cpu is processing the program multithread will switch to another thread frequently.<br></br>
 But when it comes to multiprocessing there were no GIL restriction so the four workers works parallelly.<br></br>
