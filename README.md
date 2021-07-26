@@ -6,7 +6,7 @@ Using Multi-threading to downloading picture(decrease I/O time).
 # Next update
 - [x] program flow
 - [x] MultiThread vs MultiProcessing
-- [ ] Program explain above two things
+- [ ] Program explain MultiThread vs MultiProcessing
 
 
 ## Program flow chart
@@ -38,6 +38,7 @@ Parrelly execute lots of things in a period of time.<br></br>
 But in a moment MultiThreading only execute **one task** <br></br>
 MultiPrcoess execute **Multiple tasks**<br></br>
 
+You can try the process_thread_test.py to now the differ between two of them.
 
 ## Other Information
 
